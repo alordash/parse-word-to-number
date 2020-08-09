@@ -1,0 +1,21 @@
+{
+  "name": "parse-word-to-number",
+  "version": "1.0.0",
+  "description": "Extracts numbers written as words from specified string.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jasmine"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alordash/parse-word-to-number.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alordash/parse-word-to-number/issues"
+  },
+  "homepage": "https://github.com/alordash/parse-word-to-number#readme",
+  "dependencies": {},
+  "devDependencies": {}
+}
