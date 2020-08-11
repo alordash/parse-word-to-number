@@ -114,7 +114,7 @@ describe('parseString', function () {
 describe('parseWord', function () {
     for(let spec of parseWordSpecs) {
         it(spec.in, function () {
-            expect(parser.parseWord(spec.in).value).toBe(spec.out);
+            expect(parser.parseWord(spec.in)[0].value).toBe(spec.out);
         });
     }
 });
@@ -122,7 +122,7 @@ describe('parseWord', function () {
 describe('parseWordUndefined', function () {
     for(let word of parseWordUndefined) {
         it(word, function () {
-            expect(parser.parseWord(word)).toBe(undefined);
+            expect(parser.parseWord(word).length).toBe(0);
         });
     }
 });
