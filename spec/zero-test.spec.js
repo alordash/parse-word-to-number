@@ -32,6 +32,10 @@ const parseStringSpecs = [
     {
         in: "ответ на главный вопрос жизни вселенной и всего такого сорок два",
         out: "ответ на главный вопрос жизни вселенной и всего такого 42"
+    },
+    {
+        in: "100 35 миллиардов 991 миллион 254 тысячи 195 двести 4",
+        out: "100 35991254195 204"
     }
 ];
 
@@ -110,7 +114,7 @@ describe('parseString', function () {
 describe('parseWord', function () {
     for(let spec of parseWordSpecs) {
         it(spec.in, function () {
-            expect(parser.parseWord(spec.in).word.value).toBe(spec.out);
+            expect(parser.parseWord(spec.in).value).toBe(spec.out);
         });
     }
 });
