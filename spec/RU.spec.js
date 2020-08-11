@@ -62,11 +62,11 @@ const parseWordSpecs = [
     },
     {
         in: "пяьт",
-        out: 000005
+        out: 5
     },
     {
         in: "пят",
-        out: 000005
+        out: 5
     },
     {
         in: "уосэмь",
