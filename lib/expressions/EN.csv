@@ -1,7 +1,7 @@
 ﻿META;;;;
 separators;;;;
 -;;;;
-text;value;multipliable;limit;rank
+text;value;multiply level;limit;rank
 zero;0;0;0.25;1
 one;1;0;0;1
 two;2;0;0.34;1
@@ -15,7 +15,7 @@ nine;9;0;0.34;1
 ten;10;0;0.34;1
 eleven;11;0;0.4;1
 twelve;12;0;0.4;1
-thirteen;13;1;0.4;1
+thirteen;13;0;0.4;1
 fourteen;14;0;0.4;1
 fifteen;15;0;0.4;1
 sixteen;16;0;0.4;1
@@ -30,7 +30,7 @@ sixty;60;0;0.4;2
 seventy;70;0;0.4;2
 eighty;80;0;0.4;2
 ninety;90;0;0.4;2
-hundred;100;0;0.33;3
+hundred;100;2;0.33;3
 thousand;1000;1;0.25;4
 million;1000000;1;0.43;7
 billion;1000000000;1;0.375;10
