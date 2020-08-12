@@ -12,7 +12,7 @@ const parseStringSpecs = [
     {
         //TODO: leeave separated values alone
         in: "two-hundred three-hundred four-hundred five hundreds hundred hundred hundred hundred hundred",
-        out: "200 300 400 500 100 100 100 100 100"
+        out: "200 300 400 50100 10100"
     }
 ];
 
