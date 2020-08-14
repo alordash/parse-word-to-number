@@ -6,7 +6,7 @@ $ npm i @alordash/parse-word-to-number
 
 # Description
 
-Parses string and return numbers written as words inside it.  
+Parses string and returns numbers written as words inside it.  
 It uses Damerau-Levenshtein algorithm to properly parse words even if they are written with mistakes.  
 **Supports Russian and English language.**
 
@@ -28,8 +28,8 @@ console.log(parsedWord[0].value);
 //=> 4
 
 //You can specify mistakes multiplication from 0.0, where
-//0 — do not accept words mistakes,
-//1 — accept words with error that is less than error limit for that word
+//0 — do not accept words with mistakes,
+//1 — accept words if error < error limit for that word
 //List of limits for all words is located in /lib/expressions/*.csv files
 parsedWord = parser.parseWord("hundrid", 1);
 console.log(parserWord[0].value);
@@ -64,4 +64,4 @@ separators;;;;
 text;value;multiply level;errors limit;rank
 String;Number;Number;Number;Number
 ```
-For better explanation see example .csv files located in lib/expressions folder.
+For better understanding see example .csv files located in lib/expressions folder.
