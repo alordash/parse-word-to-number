@@ -130,3 +130,10 @@ describe('RU parseWordUndefined', function () {
         i++;
     }
 });
+
+describe('RU parseCorrectWord', function () {
+    it('1', function () {
+        expect(parser.parseWord("один", 0)[0].value).toBe(1);
+        expect(parser.parseWord("одын", 0).length).toBe(0);
+    });
+});

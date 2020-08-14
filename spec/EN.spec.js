@@ -6,8 +6,8 @@ const parseStringSpecs = [
         out: "476255001021 balloons"
     },
     {
-        in: "one two three four five six nine ten eleven twelve trillions nine-thousand nine nine-millions eight-hundred-seventy-seven thousands six-hundred-fivety-four",
-        out: "1 2 3 4 5 6 9 10 11 12000000009009 9877694"
+        in: "one two three four five six nine ten eleven twelve trillions nine-thousand nine nine-millions eight-hundred-seventy-seven thousands six-hundred-fifty-four",
+        out: "1 2 3 4 5 6 9 10 11 12000000009009 9877654"
     },
     {
         //TODO: leeave separated values alone
