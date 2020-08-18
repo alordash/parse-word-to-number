@@ -36,6 +36,10 @@ const parseStringSpecs = [
     {
         in: "100 35 миллиардов 991 миллион 254 тысячи 195 двести 4",
         out: "100 35991254195 204"
+    },
+    {
+        in: "nine hundred девяносто nine миллиардов two hundred пятьдесят six миллионов seven hundred thirty два thousands one hundred одиннадцать",
+        out: "999256732111"
     }
 ];
 
