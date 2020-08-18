@@ -1,6 +1,6 @@
 {
   "name": "@alordash/parse-word-to-number",
-  "version": "1.0.4",
+  "version": "2.0.0",
   "description": "Extracts numbers written as words from string.",
   "main": "index.js",
   "scripts": {
