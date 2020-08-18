@@ -1,4 +1,4 @@
-const { Parser } = require('../lib/parse-word-to-number');
+const { parseWord, parseString } = require('../lib/parse-word-to-number');
 
 const parseStringSpecs = [
     {
@@ -101,13 +101,11 @@ const parseWordUndefined = [
     "тычка",
 ];
 
-let parser = new Parser();
-
 describe('RU parseString', function () {
     let i = 1;
     for(let spec of parseStringSpecs) {
         it(`${i}. ${spec.in}`, function () {
-            expect(parser.parseString(spec.in)).toBe(spec.out);
+            expect(parseString(spec.in)).toBe(spec.out);
         });
         i++;
     }
@@ -116,7 +114,7 @@ describe('RU parseString', function () {
 describe('RU parseWord', function () {
     for(let spec of parseWordSpecs) {
         it(spec.in, function () {
-            expect(parser.parseWord(spec.in)[0].value).toBe(spec.out);
+            expect(parseWord(spec.in)[0].value).toBe(spec.out);
         });
     }
 });
@@ -125,7 +123,7 @@ describe('RU parseWordUndefined', function () {
     let i = 1;
     for(let word of parseWordUndefined) {
         it(`${i}. ${word}`, function () {
-            expect(parser.parseWord(word).length).toBe(0);
+            expect(parseWord(word).length).toBe(0);
         });
         i++;
     }
@@ -133,7 +131,7 @@ describe('RU parseWordUndefined', function () {
 
 describe('RU parseCorrectWord', function () {
     it('1', function () {
-        expect(parser.parseWord("один", 0)[0].value).toBe(1);
-        expect(parser.parseWord("одын", 0).length).toBe(0);
+        expect(parseWord("один", 0)[0].value).toBe(1);
+        expect(parseWord("одын", 0).length).toBe(0);
     });
 });

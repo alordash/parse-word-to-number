@@ -1,4 +1,4 @@
-const { Parser } = require('../lib/parse-word-to-number');
+const { parseWord, parseString } = require('../lib/parse-word-to-number');
 
 const parseStringSpecs = [
     {
@@ -10,7 +10,6 @@ const parseStringSpecs = [
         out: "1 2 3 4 5 6 9 10 11 12000000009009 9877654"
     },
     {
-        //TODO: leeave separated values alone
         in: "two-hundred three-hundred four-hundred five hundreds hundred hundred hundred hundred hundred",
         out: "200 300 400 50100 10100"
     }
@@ -69,13 +68,11 @@ const parseWordUndefined = [
     "though",
 ];
 
-let parser = new Parser();
-
 describe('EN parseString', function () {
     let i = 1;
     for(let spec of parseStringSpecs) {
         it(`${i}. ${spec.in}`, function () {
-            expect(parser.parseString(spec.in)).toBe(spec.out);
+            expect(parseString(spec.in)).toBe(spec.out);
         });
         i++;
     }
@@ -84,7 +81,7 @@ describe('EN parseString', function () {
 describe('EN parseWord', function () {
     for(let spec of parseWordSpecs) {
         it(spec.in, function () {
-            expect(parser.parseWord(spec.in)[0].value).toBe(spec.out);
+            expect(parseWord(spec.in)[0].value).toBe(spec.out);
         });
     }
 });
@@ -93,7 +90,7 @@ describe('EN parseWordUndefined', function () {
     let i = 1;
     for(let word of parseWordUndefined) {
         it(`${i}. ${word}`, function () {
-            expect(parser.parseWord(word).length).toBe(0);
+            expect(parseWord(word).length).toBe(0);
         });
         i++;
     }

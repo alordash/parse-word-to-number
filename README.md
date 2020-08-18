@@ -13,17 +13,16 @@ It uses my realization of [Damerau-Levenshtein algorithm](https://github.com/alo
 # Usage
 
 ```javascript
-const { Parser } = require('@alordash/parse-word-to-number');
-let parser = new Parser();
+const { parseWord, parseString } = require('@alordash/parse-word-to-number');
 
 //Parse single word
-let parsedWord = parser.parseWord("twonty-one");
+let parsedWord = parseWord("twonty-one");
 console.log(parsedWord[0].value);
 //=> 20
 console.log(parsedWord[1].value);
 //=> 1
 
-parsedWord = parser.parseWord("читырэ");
+parsedWord = parseWord("читырэ");
 console.log(parsedWord[0].value);
 //=> 4
 
@@ -31,26 +30,26 @@ console.log(parsedWord[0].value);
 //0 — do not accept words with mistakes,
 //1 — accept words if error < error limit for that word
 //List of limits for all words is located in /lib/expressions/*.csv files
-parsedWord = parser.parseWord("hundrid", 1);
+parsedWord = parseWord("hundrid", 1);
 console.log(parserWord[0].value);
 //=> 100
 
-parsedWord = parser.parseWord("hundrid", 0);
+parsedWord = parseWord("hundrid", 0);
 console.log(parserWord[0]);
 //=> undefined
 
 //Parse string
-console.log(parser.parseString("four-huntred-sevinty-six balloons"));
+console.log(parseString("four-huntred-sevinty-six balloons"));
 //=> 476 balloons
 
-console.log(parser.parseString("двести дивяносто пят тысоч ложек сто восмьдесят три тарелки"));
+console.log(parseString("двести дивяносто пят тысоч ложек сто восмьдесят три тарелки"));
 //=> 295000 ложек 183 тарелок
 
 //Mistakes multiplication
-console.log(parser.parseString("four-huntred-sevinty-six balloons", 0));
+console.log(parseString("four-huntred-sevinty-six balloons", 0));
 //=> 4 balloons
 
-console.log(parser.parseString("двести дивяносто пят тысоч ложек сто восмьдесят три тарелки", 0));
+console.log(parseString("двести дивяносто пят тысоч ложек сто восмьдесят три тарелки", 0));
 //=> 200 дивяносто пят тысоч ложек 100 восмьдесят 3 тарелки
 ```
 
