@@ -107,7 +107,7 @@ const parseWordUndefined = [
 
 describe('RU parseString', function () {
     let i = 1;
-    for(let spec of parseStringSpecs) {
+    for (const spec of parseStringSpecs) {
         it(`${i}. ${spec.in}`, function () {
             expect(parseString(spec.in)).toBe(spec.out);
         });
@@ -116,7 +116,7 @@ describe('RU parseString', function () {
 });
 
 describe('RU parseWord', function () {
-    for(let spec of parseWordSpecs) {
+    for (const spec of parseWordSpecs) {
         it(spec.in, function () {
             expect(parseWord(spec.in)[0].value).toBe(spec.out);
         });
@@ -125,7 +125,7 @@ describe('RU parseWord', function () {
 
 describe('RU parseWordUndefined', function () {
     let i = 1;
-    for(let word of parseWordUndefined) {
+    for (const word of parseWordUndefined) {
         it(`${i}. ${word}`, function () {
             expect(parseWord(word).length).toBe(0);
         });

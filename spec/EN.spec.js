@@ -70,7 +70,7 @@ const parseWordUndefined = [
 
 describe('EN parseString', function () {
     let i = 1;
-    for(let spec of parseStringSpecs) {
+    for (const spec of parseStringSpecs) {
         it(`${i}. ${spec.in}`, function () {
             expect(parseString(spec.in)).toBe(spec.out);
         });
@@ -79,7 +79,7 @@ describe('EN parseString', function () {
 });
 
 describe('EN parseWord', function () {
-    for(let spec of parseWordSpecs) {
+    for (const spec of parseWordSpecs) {
         it(spec.in, function () {
             expect(parseWord(spec.in)[0].value).toBe(spec.out);
         });
@@ -88,7 +88,7 @@ describe('EN parseWord', function () {
 
 describe('EN parseWordUndefined', function () {
     let i = 1;
-    for(let word of parseWordUndefined) {
+    for (const word of parseWordUndefined) {
         it(`${i}. ${word}`, function () {
             expect(parseWord(word).length).toBe(0);
         });
