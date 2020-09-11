@@ -35,3 +35,12 @@ thousand;1000;1;2;4
 million;1000000;1;2;7
 billion;1000000000;1;2;10
 trillion;1000000000000;1;2;13
+first;1;0;1;1
+second;2;0;1;1
+third;3;0;1;1
+fourth;4;0;1;1
+fifth;5;0;1;1
+sixth;6;0;1;1
+seventh;7;0;1;1
+eighth;8;0;1;1
+nineth;9;0;1;1

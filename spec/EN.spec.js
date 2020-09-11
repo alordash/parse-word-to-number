@@ -56,6 +56,42 @@ const parseWordSpecs = [
       in: "melleon",
       out: 1000000
    },
+   {
+      in: "firsd",
+      out: 1
+   },
+   {
+      in: "secont",
+      out: 2
+   },
+   {
+      in: "tird",
+      out: 3
+   },
+   {
+      in: "fourt",
+      out: 4
+   },
+   {
+      in: "fifth",
+      out: 5
+   },
+   {
+      in: "sxth",
+      out: 6
+   },
+   {
+      in: "sevendth",
+      out: 7
+   },
+   {
+      in: "eigtth",
+      out: 8
+   },
+   {
+      in: "nienth",
+      out: 9
+   }
 ];
 
 const parseWordUndefined = [
