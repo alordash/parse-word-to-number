@@ -21,10 +21,6 @@ const parseWordSpecs = [
       out: 0
    },
    {
-      in: "two\\",
-      out: 2
-   },
-   {
       in: "thre",
       out: 3
    },

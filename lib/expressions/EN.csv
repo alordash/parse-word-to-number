@@ -4,7 +4,7 @@ separators;;;;
 text;value;multiply level;errors limit;rank
 zero;0;0;1;1
 one;1;0;0;1
-two;2;0;1;1
+two;2;0;0;1
 three;3;0;1;1
 four;4;0;0;1
 five;5;0;1;1
