@@ -12,8 +12,16 @@ It uses my realization of [Damerau-Levenshtein algorithm](https://github.com/alo
 
 # Usage
 
+### Function parseWord(string, errorLimit):{Array.\<Number\>}  
+#### Arguments
+1. string {**String**} — source string.  
+2. errorLimit {**Number**} — From 0.0 to 1.0, the less — the less results. Used for recognizing words with mistakes.  
+Parses all words in that string into numbers.  
+Returns all found numbers.  
+#### Usage example:
+
 ```javascript
-const { parseWord, parseString } = require('@alordash/parse-word-to-number');
+const { parseWord } = require('@alordash/parse-word-to-number');
 
 //Parse single word
 let parsedWord = parseWord("twonty-one");
@@ -37,13 +45,25 @@ console.log(parserWord[0].value);
 parsedWord = parseWord("hundrid", 0);
 console.log(parserWord[0]);
 //=> undefined
+```
 
-//Parse string
+
+### Function parseString(string, errorLimit):{String}  
+#### Arguments
+1. string {**String**} — source string.  
+2. errorLimit {**Number**} — From 0.0 to 1.0, the less — the less results. Used for recognizing words with mistakes.  
+Parses all words in that string into numbers and combines them.  
+Returns string with parsed numbers.  
+#### Usage example:
+  
+```javascript
+const { parseString } = require('@alordash/parse-word-to-number');
+
 console.log(parseString("four-huntred-sevinty-six balloons"));
 //=> 476 balloons
 
 console.log(parseString("двести дивяносто пят тысоч ложек сто восмьдесят три тарелки"));
-//=> 295000 ложек 183 тарелок
+//=> 295000 ложек 183 тарелки
 
 //Mistakes multiplication
 console.log(parseString("four-huntred-sevinty-six balloons", 0));
