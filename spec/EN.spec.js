@@ -104,7 +104,7 @@ describe('EN parseString', function () {
    let i = 1;
    for (const spec of parseStringSpecs) {
       it(`${i}. ${spec.in}`, function () {
-         expect(parseString(spec.in)).toBe(spec.out);
+         expect(parseString(spec.in).string).toBe(spec.out);
       });
       i++;
    }
