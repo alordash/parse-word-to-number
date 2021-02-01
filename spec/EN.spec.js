@@ -3,15 +3,21 @@ const { parseWord, parseString } = require('../lib/parse-word-to-number');
 const parseStringSpecs = [
    {
       in: "four-hundred-seventy-six-billions two hundred fity-five millions one-thousand twenty-one balloons",
-      out: "476255001021 balloons"
+      out: {
+         text: "476255001021 balloons"
+      }
    },
    {
       in: "one two three four five six nine ten eleven twelve trillions nine-thousand nine nine-millions eight-hundred-seventy-seven thousands six-hundred-fifty-four",
-      out: "1 2 3 4 5 6 9 10 11 12000000009009 9877654"
+      out: {
+         text: "1 2 3 4 5 6 9 10 11 12000000009009 9877654"
+      }
    },
    {
       in: "two-hundred three-hundred four-hundred five hundreds hundred hundred hundred hundred hundred",
-      out: "200 300 400 50100 10100"
+      out: {
+         text: "200 300 400 50100 10100"
+      }
    }
 ];
 
@@ -104,7 +110,11 @@ describe('EN parseString', function () {
    let i = 1;
    for (const spec of parseStringSpecs) {
       it(`${i}. ${spec.in}`, function () {
-         expect(parseString(spec.in).string).toBe(spec.out);
+         var result = parseString(spec.in);
+         expect(result.string).toBe(spec.out.text);
+         if(typeof(spec.out.indexes) != 'undefined') {
+            expect(result.indexes).toEqual(spec.out.indexes);
+         }
       });
       i++;
    }
