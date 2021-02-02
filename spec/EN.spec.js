@@ -4,19 +4,55 @@ const parseStringSpecs = [
    {
       in: "four-hundred-seventy-six-billions two hundred fity-five millions one-thousand twenty-one balloons",
       out: {
-         text: "476255001021 balloons"
+         text: "476255001021 balloons",
+         indexes: [
+            [0, 1, 2, 3, 4, 5, 6],
+            [7]
+         ]
       }
    },
    {
       in: "one two three four five six nine ten eleven twelve trillions nine-thousand nine nine-millions eight-hundred-seventy-seven thousands six-hundred-fifty-four",
+      //    0   1    2     3    4   5   6    7     8     9       10           11       12        13                   14                15               16
       out: {
-         text: "1 2 3 4 5 6 9 10 11 12000000009009 9877654"
+         text: "1 2 3 4 5 6 9 10 11 12000000009009 9877654",
+         indexes: [
+            [0],
+            [1],
+            [2],
+            [3],
+            [4],
+            [5],
+            [6],
+            [7],
+            [8],
+            [9, 10, 11, 12],
+            [13, 14, 15, 16]
+         ]
       }
    },
    {
       in: "two-hundred three-hundred four-hundred five hundreds hundred hundred hundred hundred hundred",
       out: {
-         text: "200 300 400 50100 10100"
+         text: "200 300 400 50100 10100",
+         indexes: [
+            [0],
+            [1],
+            [2],
+            [3, 4, 5, 6],
+            [7, 8, 9]
+         ]
+      }
+   },
+   {
+      in: "fast six hundred test",
+      out: {
+         text: "fast 600 test",
+         indexes: [
+            [0],
+            [1, 2],
+            [3]
+         ]
       }
    }
 ];
@@ -112,7 +148,7 @@ describe('EN parseString', function () {
       it(`${i}. ${spec.in}`, function () {
          var result = parseString(spec.in);
          expect(result.string).toBe(spec.out.text);
-         if(typeof(spec.out.indexes) != 'undefined') {
+         if (typeof (spec.out.indexes) != 'undefined') {
             expect(result.indexes).toEqual(spec.out.indexes);
          }
       });
