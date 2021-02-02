@@ -78,8 +78,10 @@ console.log(parseString("двести дивяносто пять тысоч л�
 #### Class ConvertedWord
 ```javascript
 class ConvertedWord {
-   text: {String}               //Text of word
-   indexes: {Array.<Number>}    //Indexes of used words from original string
+   //@type {String}
+   text;                    //Text of word
+   //@type {Array.<Number>}
+   indexes;                 //Indexes of used words from original string
 }
 ```
 
