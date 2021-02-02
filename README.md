@@ -62,15 +62,44 @@ const { parseString } = require('@alordash/parse-word-to-number');
 console.log(parseString("four-huntred-sevinty-six balloons"));
 //=> 476 balloons
 
-console.log(parseString("двести дивяносто пят тысоч ложек сто восмьдесят три тарелки"));
+console.log(parseString("двести дивяносто пять тысоч ложек сто восмьдесят три тарелки"));
 //=> 295000 ложек 183 тарелки
 
 //Mistakes multiplication
 console.log(parseString("four-huntred-sevinty-six balloons", 0));
 //=> 4 balloons
 
-console.log(parseString("двести дивяносто пят тысоч ложек сто восмьдесят три тарелки", 0));
-//=> 200 дивяносто пят тысоч ложек 100 восмьдесят 3 тарелки
+console.log(parseString("двести дивяносто пять тысоч ложек сто восмьдесят три тарелки", 0));
+//=> 200 дивяносто 5 тысоч ложек 100 восмьдесят 3 тарелки
+```
+
+### Getting array of ConvertedWords
+
+#### Class ConvertedWord
+```javascript
+class ConvertedWord {
+   text: {String}               //Text of word
+   indexes: {Array.<Number>}    //Indexes of used words from original string
+}
+```
+
+### Function arrayParseString(string, errorLimit):{Array.<ConvertedWord>}
+
+Works the same as parseString function and accepts same arguments, except it returns array of converted words.
+
+#### Usage example:
+  
+```javascript
+const { parseString } = require('@alordash/parse-word-to-number');
+
+let result = arrayParseString("four huntred sevinty-six balloons");
+console.log(JSON.stringify(result));
+//=> [{"text":"476","indexes":[0,1,2]},{"text":"balloons","indexes":[3]}]
+
+
+result = arrayParseString("двести дивяносто пять тысоч ложек сто восмьдесят три тарелки");
+console.log(JSON.stringify(result));
+//=> [{"text":"295000","indexes":[0,1,2,3]},{"text":"ложек","indexes":[4]},{"text":"183","indexes":[5,6,7]},{"text":"тарелки","indexes":[8]}]
 ```
 
 # Adding custom expressions
