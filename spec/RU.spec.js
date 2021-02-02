@@ -1,4 +1,12 @@
-const { parseWord, parseString } = require('../lib/parse-word-to-number');
+const { parseWord, arrayParseString, joinResult } = require('../lib/parse-word-to-number');
+
+function formIndexes(result) {
+   let indexes = [];
+   for(let res of result) {
+      indexes.push(res.indexes);
+   }
+   return indexes;
+}
 
 const parseStringSpecs = [
    {
@@ -238,10 +246,10 @@ describe('RU parseString', function () {
    let i = 1;
    for (const spec of parseStringSpecs) {
       it(`${i}. ${spec.in}`, function () {
-         var result = parseString(spec.in);
-         expect(result.string).toBe(formatSpecOut(spec.out.text));
+         let result = arrayParseString(spec.in);
+         expect(joinResult(result)).toBe(formatSpecOut(spec.out.text));
          if (typeof (spec.out.indexes) != 'undefined') {
-            expect(result.indexes).toEqual(spec.out.indexes);
+            expect(formIndexes(result)).toEqual(spec.out.indexes);
          }
       });
       i++;
