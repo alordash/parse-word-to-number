@@ -2,7 +2,7 @@ const { parseWord, arrayParseString, joinResult } = require('../lib/parse-word-t
 
 function formIndexes(result) {
    let indexes = [];
-   for(let res of result) {
+   for (let res of result) {
       indexes.push(res.indexes);
    }
    return indexes;
@@ -145,6 +145,25 @@ const parseStringSpecs = [
             [3]
          ]
       }
+   },
+   {
+      in: "полтора куска",
+      out: {
+         text: "1.5 куска",
+         indexes: [
+            [0],
+            [1]
+         ]
+      }
+   },
+   {
+      in: "полторы тысячи",
+      out: {
+         text: "1500",
+         indexes: [
+            [0, 1]
+         ]
+      }
    }
 ];
 
@@ -186,7 +205,7 @@ const parseWordSpecs = [
       out: 1000
    },
    {
-      in: "мелеон",
+      in: "милеон",
       out: 1000000
    },
    {
