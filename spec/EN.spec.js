@@ -156,7 +156,7 @@ describe('EN parseString', function () {
       it(`${i}. ${spec.in}`, function () {
          let result = arrayParseString(spec.in);
          expect(joinResult(result)).toBe(spec.out.text);
-         if (typeof (spec.out.indexes) != 'undefined') {
+         if (spec.out.indexes != undefined) {
             expect(formIndexes(result)).toEqual(spec.out.indexes);
          }
       });
