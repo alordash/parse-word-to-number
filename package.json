@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/alordash/parse-word-to-number#readme",
   "dependencies": {
-    "@alordash/damerau-levenshtein": "^1.0.7"
+    "@alordash/damerau-levenshtein": "^1.0.8"
   },
   "devDependencies": {},
   "keywords": [
