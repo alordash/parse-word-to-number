@@ -174,6 +174,15 @@ const parseStringSpecs = [
             [1]
          ]
       }
+   },
+   {
+      in: "01.10",
+      out: {
+         text: "01.10",
+         indexes: [
+            [0]
+         ]
+      }
    }
 ];
 
@@ -256,17 +265,6 @@ const parseWordSpecs = [
    }
 ];
 
-const parseWordUndefined = [
-   "рыба",
-   "двери",
-   "диван",
-   "четверг",
-   "семья",
-   "сорока",
-   "стол",
-   "тычка",
-];
-
 function formatSpecOut(string) {
    return string.replace(/  +/g, ' ');
 }
@@ -290,16 +288,6 @@ describe('RU parseWord', function () {
       it(spec.in, function () {
          expect(parseWord(spec.in)[0].value).toBe(spec.out);
       });
-   }
-});
-
-describe('RU parseWordUndefined', function () {
-   let i = 1;
-   for (const word of parseWordUndefined) {
-      it(`${i}. ${word}`, function () {
-         expect(parseWord(word).length).toBe(0);
-      });
-      i++;
    }
 });
 

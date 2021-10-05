@@ -62,6 +62,15 @@ const parseStringSpecs = [
             [3]
          ]
       }
+   },
+   {
+      in: "12.07",
+      out: {
+         text: "12.07",
+         indexes: [
+            [0]
+         ]
+      }
    }
 ];
 
@@ -140,16 +149,6 @@ const parseWordSpecs = [
    }
 ];
 
-const parseWordUndefined = [
-   "fish",
-   "doors",
-   "sofa",
-   "thursday",
-   "fort",
-   "table",
-   "though",
-];
-
 describe('EN parseString', function () {
    let i = 1;
    for (const spec of parseStringSpecs) {
@@ -169,15 +168,5 @@ describe('EN parseWord', function () {
       it(spec.in, function () {
          expect(parseWord(spec.in)[0].value).toBe(spec.out);
       });
-   }
-});
-
-describe('EN parseWordUndefined', function () {
-   let i = 1;
-   for (const word of parseWordUndefined) {
-      it(`${i}. ${word}`, function () {
-         expect(parseWord(word).length).toBe(0);
-      });
-      i++;
    }
 });
