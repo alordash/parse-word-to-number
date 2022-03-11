@@ -71,6 +71,24 @@ const parseStringSpecs = [
             [0]
          ]
       }
+   },
+   {
+      in: "zero",
+      out: {
+         text: "0",
+         indexes:[
+            [0]
+         ]
+      }
+   },
+   {
+      in: "zero one zero zero one",
+      out: {
+         text: "0 1 0 0 1",
+         indexes:[
+            [0], [1], [2], [3], [4]
+         ]
+      }
    }
 ];
 
